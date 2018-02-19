@@ -58,11 +58,11 @@ import exceptions from './bancard-checkout-exceptions';
       let newUrl = url;
 
       if (['&', '?'].indexOf(lastUrlChar) > -1) {
-        newUrl += paramValue;
+        newUrl = `${newUrl}${paramValue}`;
       } else if (url.indexOf('?') > -1) {
-        newUrl += `&${paramValue}`;
+        newUrl = `${newUrl}&${paramValue}`;
       } else {
-        newUrl += `?${paramValue}`;
+        newUrl = `${newUrl}?${paramValue}`;
       }
 
       return newUrl;
